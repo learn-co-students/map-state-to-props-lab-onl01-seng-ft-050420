@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class UserInput extends Component {
-
   state = {
     username: '',
     hometown: ''
@@ -11,16 +10,16 @@ class UserInput extends Component {
   handleInputChange = (event) => {
     this.setState({
       [event.target.id]: event.target.value
-    });
+    })
   }
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    this.props.dispatch({type: 'ADD_USER', user: this.state})
+    this.props.dispatch({ type: 'ADD_USER', user: this.state })
   }
 
   render() {
-    return(
+    return (
       <form onSubmit={this.handleOnSubmit}>
         <p>
           <input
@@ -44,4 +43,4 @@ class UserInput extends Component {
   }
 }
 
-export default connect()(UserInput);
+export default connect()(UserInput)
